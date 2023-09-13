@@ -1,5 +1,25 @@
 import React from 'react';
 
+const MapComponent = () => {
+  return (
+    <div className="mapouter">
+      <div className="gmap_canvas">
+        <iframe
+          title="Google Map"
+          width="420"
+          height="460"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=Tercera+Ote+33-B%2C+Nuevo+M%C3%A9xico%2C+45200+Nuevo+M%C3%A9xico%2C+Jal.&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameBorder="0"
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const bodyStyles = {
     fontFamily: 'Arial, sans-serif',
@@ -57,6 +77,11 @@ function App() {
     padding: '0.5rem',
   };
 
+  const mapContainerStyles = {
+    width: '100%',
+    height: '400px',
+  };
+
   const footerStyles = {
     backgroundColor: '#333',
     color: 'white',
@@ -69,27 +94,58 @@ function App() {
       <header style={headerStyles}>
         <nav>
           <ul style={navStyles}>
-            <li style={navLiStyles}><a href="#inicio" style={navLinkStyles}>Inicio</a></li>
-            <li style={navLiStyles}><a href="#menu" style={navLinkStyles}>Menú</a></li>
-            <li style={navLiStyles}><a href="#acerca" style={navLinkStyles}>Acerca de</a></li>
-            <li style={navLiStyles}><a href="#contacto" style={navLinkStyles}>Contacto</a></li>
+            <li style={navLiStyles}>
+              <a href="#inicio" style={navLinkStyles}>
+                Inicio
+              </a>
+            </li>
+            <li style={navLiStyles}>
+              <a href="#menu" style={navLinkStyles}>
+                Menú
+              </a>
+            </li>
+            <li style={navLiStyles}>
+              <a href="#acerca" style={navLinkStyles}>
+                Acerca de
+              </a>
+            </li>
+            <li style={navLiStyles}>
+              <a href="#contacto" style={navLinkStyles}>
+                Contacto
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
       <main>
         <section style={sectionStyles} className="hero" id="inicio">
           <h1>Tortas Ahogadas Lupita</h1>
-          <p>"En Lupita, te invitamos a descubrir una experiencia culinaria única, donde la calidad se fusiona con la tradición para ofrecerte las mejores tortas ahogadas de la ciudad. Nuestra dedicación a ingredientes frescos, sazón auténtico y pasión por la excelencia culinaria nos distingue como el destino definitivo para aquellos que buscan saborear lo mejor de la gastronomía local."</p>
+          <p>
+            "En Lupita, te invitamos a descubrir una experiencia culinaria única,
+            donde la calidad se fusiona con la tradición para ofrecerte las
+            mejores tortas ahogadas de la ciudad. Nuestra dedicación a ingredientes
+            frescos, sazón auténtico y pasión por la excelencia culinaria nos
+            distingue como el destino definitivo para aquellos que buscan saborear
+            lo mejor de la gastronomía local."
+          </p>
         </section>
         <section style={sectionStyles} className="menu" id="menu">
           <h2>Nuestro Menú</h2>
           <div style={menuItemStyles} className="menu-item">
-            <img src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2022/10/torta-ahogada.jpg" alt="Torta Ahogada 1" style={menuItemImageStyles} />
+            <img
+              src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2022/10/torta-ahogada.jpg"
+              alt="Torta Ahogada 1"
+              style={menuItemImageStyles}
+            />
             <h3>Torta Ahogada Clásica</h3>
             <p>Deliciosa torta ahogada con salsa picante y carnitas.</p>
           </div>
           <div style={menuItemStyles} className="menu-item">
-            <img src="https://cdn2.cocinadelirante.com/sites/default/files/images/2023/08/torta-ahogada-de-camaron.jpg" alt="Torta Ahogada 2" style={menuItemImageStyles} />
+            <img
+              src="https://cdn2.cocinadelirante.com/sites/default/files/images/2023/08/torta-ahogada-de-camaron.jpg"
+              alt="Torta Ahogada 2"
+              style={menuItemImageStyles}
+            />
             <h3>Torta Ahogada de Camarones</h3>
             <p>Torta ahogada rellena de camarones frescos y aguacate.</p>
           </div>
@@ -97,22 +153,62 @@ function App() {
         </section>
         <section style={sectionStyles} className="about" id="acerca">
           <h2>Acerca de Nosotros</h2>
-          <p>Con orgullo te presentamos a "Tortas Ahogadas Lupita", un tesoro gastronómico arraigado en el corazón de nuestra querida ciudad desde hace décadas. Esta legendaria casa de las tortas ahogadas fue fundada por la apasionada Lupita, una visionaria culinaria que dedicó su vida a perfeccionar esta deliciosa especialidad.
-
-Nuestra historia se remonta a tiempos en los que las tortas ahogadas eran un auténtico tesoro culinario, pasando de generación en generación en nuestra familia. Lupita, con su amor por la cocina y su deseo de compartir esta delicia con el mundo, decidió abrir las puertas de su pequeño local en el corazón de la ciudad. Desde entonces, su nombre se ha convertido en sinónimo de calidad y sabor inigualables.
-
-En "Tortas Ahogadas Lupita", honramos esa rica herencia todos los días. Cada bocado de nuestras tortas ahogadas es un tributo a la dedicación y pasión de Lupita por ofrecer autenticidad y calidad a nuestros queridos clientes. Con ingredientes frescos y una salsa secreta que ha sido perfeccionada durante generaciones, nuestras tortas ahogadas son irresistibles y te transportarán a los sabores tradicionales de nuestra ciudad.
-
-Seguimos siendo un lugar donde la tradición culinaria se encuentra con la excelencia, y estamos encantados de continuar deleitando a los amantes de la buena comida con cada bocado de nuestras tortas ahogadas auténticas y llenas de historia. ¡Te invitamos a ser parte de nuestra historia y a disfrutar de esta experiencia culinaria única en "Tortas Ahogadas Lupita"!"</p>
+          <p>
+            Con orgullo te presentamos a "Tortas Ahogadas Lupita", un tesoro
+            gastronómico arraigado en el corazón de nuestra querida ciudad desde
+            hace décadas. Esta legendaria casa de las tortas ahogadas fue fundada
+            por la apasionada Lupita, una visionaria culinaria que dedicó su vida
+            a perfeccionar esta deliciosa especialidad. Nuestra historia se remonta
+            a tiempos en los que las tortas ahogadas eran un auténtico tesoro
+            culinario, pasando de generación en generación en nuestra familia.
+            Lupita, con su amor por la cocina y su deseo de compartir esta delicia
+            con el mundo, decidió abrir las puertas de su pequeño local en el
+            corazón de la ciudad. Desde entonces, su nombre se ha convertido en
+            sinónimo de calidad y sabor inigualables. En "Tortas Ahogadas Lupita",
+            honramos esa rica herencia todos los días. Cada bocado de nuestras
+            tortas ahogadas es un tributo a la dedicación y pasión de Lupita por
+            ofrecer autenticidad y calidad a nuestros queridos clientes. Con
+            ingredientes frescos y una salsa secreta que ha sido perfeccionada
+            durante generaciones, nuestras tortas ahogadas son irresistibles y te
+            transportarán a los sabores tradicionales de nuestra ciudad. Seguimos
+            siendo un lugar donde la tradición culinaria se encuentra con la
+            excelencia, y estamos encantados de continuar deleitando a los amantes
+            de la buena comida con cada bocado de nuestras tortas ahogadas
+            auténticas y llenas de historia. ¡Te invitamos a ser parte de nuestra
+            historia y a disfrutar de esta experiencia culinaria única en "Tortas
+            Ahogadas Lupita"!
+          </p>
+        </section>
+        <section style={sectionStyles} className="map" id="mapa">
+          <h2>Ubicación</h2>
+          <div style={mapContainerStyles}>
+            <MapComponent />
+          </div>
         </section>
         <section style={sectionStyles} className="contact" id="contacto">
           <h2>Contacto</h2>
           <p>¡Contáctanos para realizar tu pedido o hacer una reserva!</p>
           <form id="contact-form" style={contactFormStyles}>
-            <input type="text" placeholder="Nombre" required style={contactInputStyles} />
-            <input type="email" placeholder="Correo Electrónico" required style={contactInputStyles} />
-            <textarea placeholder="Mensaje" required style={contactInputStyles}></textarea>
-            <button type="submit" style={contactInputStyles}>Enviar Mensaje</button>
+            <input
+              type="text"
+              placeholder="Nombre"
+              required
+              style={contactInputStyles}
+            />
+            <input
+              type="email"
+              placeholder="Correo Electrónico"
+              required
+              style={contactInputStyles}
+            />
+            <textarea
+              placeholder="Mensaje"
+              required
+              style={contactInputStyles}
+            ></textarea>
+            <button type="submit" style={contactInputStyles}>
+              Enviar Mensaje
+            </button>
           </form>
         </section>
       </main>
