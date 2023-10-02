@@ -133,7 +133,7 @@ function App() {
           <h2>Nuestro Menú</h2>
           <div style={menuItemStyles} className="menu-item">
             <img
-              src="https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2022/10/torta-ahogada.jpg"
+              src="https://foodandtravel.mx/wp-content/uploads/2021/08/TortasAhogadasPor.jpg"
               alt="Torta Ahogada 1"
               style={menuItemImageStyles}
             />
@@ -142,7 +142,7 @@ function App() {
           </div>
           <div style={menuItemStyles} className="menu-item">
             <img
-              src="https://cdn2.cocinadelirante.com/sites/default/files/images/2023/08/torta-ahogada-de-camaron.jpg"
+              src="https://dorastable.com/wp-content/uploads/2017/04/torta-ahogada-3-1030x682.jpg"
               alt="Torta Ahogada 2"
               style={menuItemImageStyles}
             />
