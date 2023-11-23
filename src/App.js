@@ -1,26 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+// Componente para mostrar el mapa
 const MapComponent = () => {
+  const mapContainerStyles = {
+    width: '100%',
+    height: '400px',
+  };
+
   return (
-    <div className="mapouter">
-      <div className="gmap_canvas">
-        <iframe
-          title="Google Map"
-          width="420"
-          height="460"
-          id="gmap_canvas"
-          src="https://maps.google.com/maps?q=Tercera+Ote+33-B%2C+Nuevo+M%C3%A9xico%2C+45200+Nuevo+M%C3%A9xico%2C+Jal.&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          frameBorder="0"
-          scrolling="no"
-          marginHeight="0"
-          marginWidth="0"
-        ></iframe>
+    <div style={mapContainerStyles}>
+      <div className="mapouter">
+        <div className="gmap_canvas">
+          <iframe
+            title="Google Map"
+            width="100%"
+            height="100%"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=Tercera+Ote+33-B%2C+Nuevo+M%C3%A9xico%2C+45200+Nuevo+M%C3%A9xico%2C+Jal.&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
 };
 
-function App() {
+// Componente para mostrar órdenes pendientes
+const OrdenesPendientes = ({ ordenesPendientes }) => {
+  return (
+    <div>
+      <h1>Órdenes Pendientes</h1>
+      <ul>
+        {ordenesPendientes.map((orden, index) => (
+          <li key={index}>{orden}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+// Componente para la caja
+const Caja = ({ onGenerarCuenta, onRealizarCobro }) => {
+  return (
+    <div>
+      <h1>Caja</h1>
+      <button onClick={onGenerarCuenta}>Generar Cuenta</button>
+      <button onClick={onRealizarCobro}>Realizar Cobro</button>
+    </div>
+  );
+};
+
+// Componente principal App
+const App = () => {
+  const [ordenesPendientes, setOrdenesPendientes] = useState([
+    'Orden 1',
+    'Orden 2',
+    'Orden 3',
+  ]);
+
   const bodyStyles = {
     fontFamily: 'Arial, sans-serif',
     margin: 0,
@@ -61,7 +101,9 @@ function App() {
   };
 
   const menuItemImageStyles = {
-    maxWidth: '100%',
+    width: '100%',
+    height: '200px',
+    objectFit: 'cover',
     borderRadius: '5px',
   };
 
@@ -87,6 +129,14 @@ function App() {
     color: 'white',
     textAlign: 'center',
     padding: '1rem 0',
+  };
+
+  const handleGenerarCuenta = () => {
+    alert('Cuenta generada');
+  };
+
+  const handleRealizarCobro = () => {
+    alert('Cobro realizado');
   };
 
   return (
@@ -149,7 +199,7 @@ function App() {
             <h3>Torta Ahogada de Camarones</h3>
             <p>Torta ahogada rellena de camarones frescos y aguacate.</p>
           </div>
-          {/* Add more menu items here */}
+          {/* Agrega más elementos de menú aquí */}
         </section>
         <section style={sectionStyles} className="about" id="acerca">
           <h2>Acerca de Nosotros</h2>
@@ -181,42 +231,24 @@ function App() {
         </section>
         <section style={sectionStyles} className="map" id="mapa">
           <h2>Ubicación</h2>
-          <div style={mapContainerStyles}>
-            <MapComponent />
-          </div>
+          <MapComponent />
         </section>
-        <section style={sectionStyles} className="contact" id="contacto">
-          <h2>Contacto</h2>
-          <p>¡Contáctanos para realizar tu pedido o hacer una reserva!</p>
-          <form id="contact-form" style={contactFormStyles}>
-            <input
-              type="text"
-              placeholder="Nombre"
-              required
-              style={contactInputStyles}
-            />
-            <input
-              type="email"
-              placeholder="Correo Electrónico"
-              required
-              style={contactInputStyles}
-            />
-            <textarea
-              placeholder="Mensaje"
-              required
-              style={contactInputStyles}
-            ></textarea>
-            <button type="submit" style={contactInputStyles}>
-              Enviar Mensaje
-            </button>
-          </form>
+        <section style={sectionStyles} className="ordenes" id="ordenes">
+          <OrdenesPendientes ordenesPendientes={ordenesPendientes} />
         </section>
+        <section style={sectionStyles} className="caja" id="caja">
+          <Caja
+            onGenerarCuenta={handleGenerarCuenta}
+            onRealizarCobro={handleRealizarCobro}
+          />
+        </section>
+        {/* ... (más secciones según sea necesario) ... */}
       </main>
       <footer style={footerStyles}>
         <p>&copy; 2023 Tortas Ahogadas Lupita</p>
       </footer>
     </div>
   );
-}
+};
 
 export default App;
