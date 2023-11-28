@@ -164,6 +164,9 @@ const App = () => {
                 Contacto
               </a>
             </li>
+
+
+    
           </ul>
         </nav>
       </header>
@@ -189,6 +192,10 @@ const App = () => {
             />
             <h3>Torta Ahogada Clásica</h3>
             <p>Deliciosa torta ahogada con salsa picante y carnitas.</p>
+
+
+
+                
           </div>
           <div style={menuItemStyles} className="menu-item">
             <img
@@ -228,11 +235,16 @@ const App = () => {
             historia y a disfrutar de esta experiencia culinaria única en "Tortas
             Ahogadas Lupita"!
           </p>
-        </section>
+       
+              
+              </section>
         <section style={sectionStyles} className="map" id="mapa">
           <h2>Ubicación</h2>
           <MapComponent />
         </section>
+
+
+              
         <section style={sectionStyles} className="ordenes" id="ordenes">
           <OrdenesPendientes ordenesPendientes={ordenesPendientes} />
         </section>
